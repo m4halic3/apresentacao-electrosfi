@@ -281,8 +281,6 @@ Note:
 
 <p class="subtitulo menta forte">Perguntas?</p>
 
-<p class="contato">alice.mariana@aluno.ifsp.edu.br</p>
-
 <p class="rodape">ElectrosFI · IFSP Câmpus Itapetininga</p>
 
 Note:
