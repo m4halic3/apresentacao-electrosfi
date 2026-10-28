@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ElectrosFI · Palestra para o Ensino Médio</title>
+  <link rel="stylesheet" href="vendor/reveal/reset.css">
+  <link rel="stylesheet" href="vendor/reveal/reveal.css">
+  <link rel="stylesheet" href="assets/fontes.css">
+  <link rel="stylesheet" href="assets/tema.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown>
+<textarea data-template>
+<!-- .slide: class="escuro capa" data-background-color="#0B2B22" -->
+
+<div class="fundo-ondas"><canvas class="ondas-fundo" width="1920" height="1080" aria-hidden="true"></canvas></div>
+
+<p class="eyebrow">IFSP Itapetininga · Projeto de pesquisa</p>
+
+<h1 class="titulo-capa">Electros<span class="menta">FI</span></h1>
+
+<p class="subtitulo">Como o computador consegue “ver” ondas que os nossos olhos não enxergam</p>
+
+<p class="rodape">Mariana Alice Pires Leite (Pimeys) · Tecnologia em Sistemas para Internet</p>
+
+Note:
+(30 segundos) Oi gente, eu sou a Mariana, mas todo mundo me chama de Pimeys. Eu estudo Sistemas para Internet aqui no IFSP e faço parte de um projeto de pesquisa chamado ElectrosFI. Nos próximos quinze minutos eu vou mostrar como a gente faz o computador enxergar ondas que são invisíveis pra gente, e no final vocês vão ver ele funcionando de verdade.
+
+---
+
+<!-- .slide: class="destaque" data-background-color="#3DDC97" -->
+
+<p class="eyebrow">Pergunta pra começar</p>
+
+# Levanta a mão quem usou Wi-Fi hoje!
+
+<p class="fragment grande">E quem mandou mensagem no celular? Ouviu rádio? Esquentou comida no micro-ondas?</p>
+
+<p class="fragment caveat">Então você já usou ondas eletromagnéticas hoje.</p>
+
+Note:
+(45 segundos) Começo pedindo pra levantarem a mão. Quem usou Wi-Fi hoje? Depois clico e pergunto do celular, do rádio e do micro-ondas, deixando a turma ir levantando a mão. No último clique aparece a frase final e eu falo que todo mundo aqui já usou ondas eletromagnéticas hoje, mesmo sem perceber, e que o ElectrosFI é justamente sobre essas ondas.
+
+---
+
+<!-- .slide: class="claro" data-background-color="#F1F5EE" -->
+
+<p class="eyebrow">O que são</p>
+
+## Ondas invisíveis estão em todo lugar
+
+<p class="lead">São energia viajando pelo espaço na velocidade da luz. O que muda de uma para outra é o tamanho da onda.</p>
+
+<div class="espectro">
+<div class="espectro-legenda"><span>ondas gigantes</span><span>ondas pequeninas</span></div>
+<div class="espectro-barra"></div>
+<div class="grade g5">
+<div class="cartao"><h3>Rádio</h3><p>Estações de rádio e TV</p></div>
+<div class="cartao realce"><h3>Micro-ondas</h3><p>Wi-Fi, celular e o forno</p></div>
+<div class="cartao"><h3>Infravermelho</h3><p>Controle remoto e calor</p></div>
+<div class="cartao"><h3>Luz visível</h3><p>Tudo o que você enxerga</p></div>
+<div class="cartao"><h3>Raio-X</h3><p>Exames no hospital</p></div>
+</div>
+</div>
+
+Note:
+(45 segundos) Aqui eu mostro que rádio, Wi-Fi, controle remoto, a luz que a gente vê e o raio-X são todos a mesma coisa, ondas eletromagnéticas. A diferença é só o tamanho da onda. A luz visível é só esse pedacinho colorido da barra, então a maior parte dessas ondas a gente nem consegue ver. Destaco o Wi-Fi e o celular, que ficam na faixa das micro-ondas, porque foi o que eles acabaram de levantar a mão.
+
+---
+
+<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
+
+<p class="eyebrow">O problema</p>
+
+## Testar na vida real custa caro
+
+<div class="grade g2">
+<div class="cartao">
+<h3>Laboratório real</h3>
+<p>Fabricar a peça, medir, descobrir que errou e fabricar tudo de novo.</p>
+<span class="pill lima">Demora e gasta dinheiro</span>
+</div>
+<div class="cartao realce">
+<h3>Laboratório virtual</h3>
+<p>Desenhar no computador, simular, ajustar e simular de novo.</p>
+<span class="pill">Testa quantas vezes quiser</span>
+</div>
+</div>
+
+<p class="lead">Antenas, chips e fibras ópticas são simulados antes de existirem. <b>É isso que o ElectrosFI faz.</b></p>
+
+Note:
+(45 segundos) Imagina que vocês querem criar uma antena nova ou o cabo de fibra óptica que leva internet pra casa de vocês. Dá pra fabricar, testar e torcer pra dar certo, mas se der errado tem que fazer tudo de novo e isso custa tempo e dinheiro. Por isso engenheiros e cientistas usam simulação, que é como um laboratório dentro do computador onde dá pra errar à vontade. O ElectrosFI é um desses laboratórios virtuais.
+
+---
+
+<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
+
+<div class="lado-a-lado">
+<div>
+<p class="eyebrow">Como o computador faz</p>
+<h2>Ele divide o espaço em blocos</h2>
+<p class="lead">As ondas seguem quatro regras da física, as <b>Equações de Maxwell</b>. O computador corta o espaço em quadradinhos, igual ao mundo do Minecraft, e calcula cada bloco, um instante depois do outro.</p>
+<p class="nota">No ElectrosFI, o 2D usa o método FDTD (biblioteca Meep) e o 3D usa o FEM (Gmsh e NGSolve).</p>
+</div>
+<figure>
+<canvas class="sim sim-guia" width="120" height="68" aria-label="Simulação de uma onda presa num guia de onda reto"></canvas>
+<figcaption><span class="ponto"></span> Rodando agora, a onda presa dentro de um guia de onda reto, o mesmo teste feito no ElectrosFI. Nas bordas, uma camada “de espuma” (PML) engole as ondas.</figcaption>
+</figure>
+</div>
+
+Note:
+(1 minuto e 15) As ondas obedecem a quatro equações bem famosas, as Equações de Maxwell. O computador não consegue resolver isso para o espaço inteiro de uma vez, então ele corta o espaço em blocos pequenininhos, igual ao Minecraft, e calcula bloco por bloco, um instante depois do outro. Do lado está uma simulação de verdade rodando dentro do slide. A faixa mais clara no meio é um guia de onda reto, um caminho feito pra prender a luz, e dá pra ver a onda andando presa dentro dele. Foi esse o teste que usamos pra validar o ElectrosFI em 2D, seguindo o tutorial oficial do Meep. Nas bordas a onda some porque existe uma camada que absorve tudo, chamada PML, que funciona como a espuma de um estúdio de música, impedindo o eco. No ElectrosFI o 2D usa o método FDTD, com a biblioteca Meep, e o 3D usa o método dos elementos finitos, com Gmsh e NGSolve.
+
+---
+
+<!-- .slide: class="claro" data-background-color="#F1F5EE" -->
+
+<div class="lado-a-lado">
+<div>
+<p class="eyebrow">Por que precisa de um supercomputador?</p>
+<h2>Em 3D, a conta explode</h2>
+<p class="lead">Quanto mais detalhe a peça precisa, menores ficam os blocos e maior fica a malha. Em 3D isso cresce em todas as direções ao mesmo tempo.</p>
+<div class="cartao inverso">
+<p class="eyebrow">Resultado</p>
+<p class="frase-forte">Uma simulação 3D bem detalhada pode exigir mais memória e processamento do que um computador comum tem.</p>
+</div>
+</div>
+<figure>
+<canvas class="sim malha-refina" width="792" height="446" aria-label="Animação de uma malha ficando cada vez mais fina"></canvas>
+<figcaption><span class="ponto"></span> A mesma peça desenhada com blocos cada vez menores. Mais detalhe, mais blocos para calcular.</figcaption>
+</figure>
+</div>
+
+Note:
+(45 segundos) Na animação, a mesma peça redonda vai sendo desenhada com blocos cada vez menores. Com blocos grandes ela fica quadrada e feia, com blocos pequenos ela fica fiel, só que a quantidade de blocos cresce muito. Em 3D isso piora, porque cresce na largura, na altura e na profundidade ao mesmo tempo. Pergunto pra turma se o notebook ou o celular deles aguentaria isso, e explico que simulações 3D detalhadas podem precisar de bem mais memória e processamento do que um computador comum oferece. É aí que entra a próxima parte.
+
+---
+
+<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
+
+<p class="eyebrow">Então, o que é o ElectrosFI?</p>
+
+## Um laboratório de ondas que abre no navegador
+
+<div class="grade g3">
+<div class="cartao">
+<h3>Programa pago</h3>
+<p>COMSOL e ANSYS. Licença cara e um computador muito potente.</p>
+</div>
+<div class="cartao">
+<h3>Biblioteca de código</h3>
+<p>Meep e NGSolve. Grátis, mas precisa instalar e usar pelo terminal.</p>
+</div>
+<div class="cartao realce">
+<h3 class="menta">ElectrosFI</h3>
+<p>Grátis, usa essas mesmas bibliotecas e abre direto no navegador.</p>
+</div>
+</div>
+
+<p class="caveat">É tipo streaming, o filme roda longe e chega pronto na sua tela.</p>
+
+Note:
+(45 segundos) Hoje quem quer simular ondas tem dois caminhos. Ou paga caro por programas como COMSOL e ANSYS e ainda precisa de um computador muito forte, ou usa bibliotecas gratuitas como Meep e NGSolve, que são ótimas mas exigem instalar tudo e programar no terminal. O ElectrosFI junta o melhor dos dois. Ele usa essas bibliotecas gratuitas por baixo e entrega tudo pronto no navegador, num modelo chamado Software como Serviço, ou SaaS. Uso a comparação com streaming, o filme não fica guardado no celular deles, ele roda longe e chega pronto.
+
+---
+
+<!-- .slide: class="claro" data-background-color="#F1F5EE" -->
+
+<p class="eyebrow">Por dentro</p>
+
+## A viagem de uma simulação
+
+<div class="fluxo">
+<div class="cartao"><p class="passo">1</p><h3>A tela</h3><p>Você desenha a peça no navegador</p><p class="tec">Vue.js</p></div>
+<span class="seta"></span>
+<div class="cartao"><p class="passo">2</p><h3>O porteiro</h3><p>Recebe o pedido e manda para o lugar certo</p><p class="tec">Kong</p></div>
+<span class="seta"></span>
+<div class="cartao"><p class="passo">3</p><h3>O gerente</h3><p>Organiza o que precisa ser calculado</p><p class="tec">Node.js</p></div>
+<span class="seta"></span>
+<div class="cartao"><p class="passo">4</p><h3>As calculadoras</h3><p>Resolvem Maxwell em 2D ou em 3D</p><p class="tec">Python · Meep · NGSolve</p></div>
+<span class="seta"></span>
+<div class="cartao inverso"><p class="passo">5</p><h3>O resultado</h3><p>Volta como mapa de cores e fica guardado</p><p class="tec">MongoDB</p></div>
+</div>
+
+<p class="lead">Cada parte roda dentro de uma “caixinha” separada, chamada <b>contêiner Docker</b>. Guarda essa informação, ela vai ser importante.</p>
+
+Note:
+(1 minuto) O ElectrosFI é um sistema com várias partes, cada uma com um trabalho. A tela, feita em Vue.js, é onde a pessoa desenha. O Kong funciona como um porteiro, recebe os pedidos e manda pro lugar certo. O Node.js é o gerente que organiza o trabalho. As calculadoras são programas em Python, o Meep pra 2D e o NGSolve pra 3D. No fim o resultado volta como uma imagem colorida e fica guardado no banco de dados, o MongoDB. Cada parte roda numa caixinha separada chamada contêiner Docker, o que deixa o sistema funcionando igual em qualquer computador. Peço pra guardarem essa palavra, porque daqui a pouco ela vira o vilão da história.
+
+---
+
+<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
+
+<p class="eyebrow">O supercomputador do campus</p>
+
+## Quatro servidores trabalhando juntos
+
+<div class="grade g3">
+<div class="cartao"><p class="numero">4</p><p>servidores Dell PowerEdge T550</p></div>
+<div class="cartao"><p class="numero">64</p><p>núcleos de processamento Intel Xeon 4314</p></div>
+<div class="cartao"><p class="numero">256 GB</p><p>de memória RAM</p></div>
+</div>
+
+<p class="lead">Cada servidor tem dois SSDs de 960 GB e roda Debian 12. Ligados em rede, eles formam um <b>cluster</b> de computação de alto desempenho (HPC).</p>
+
+Note:
+(45 segundos) Aqui no campus a gente tem um cluster, que é um grupo de computadores ligados em rede trabalhando como se fossem um só. São quatro servidores Dell PowerEdge, somando sessenta e quatro núcleos de processamento e duzentos e cinquenta e seis gigas de memória. Esses servidores foram adquiridos com um financiamento de pesquisa da SETEC do MEC e ficam aqui no IFSP. Um deles é o nó mestre, que conversa com a rede do campus, e os outros ficam numa rede interna só deles. Se der, vale convidar a turma pra conhecer a sala dos servidores depois.
+
+---
+
+<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
+
+<div class="lado-a-lado">
+<div>
+<p class="eyebrow">O plano</p>
+<h2>Dividir para conquistar</h2>
+<p class="lead">A simulação é cortada em pedaços e cada servidor calcula o seu pedaço <b>ao mesmo tempo</b>. Nas bordas, eles trocam mensagens para a onda continuar viajando. Essa conversa entre as máquinas se chama <b>MPI</b>.</p>
+<p class="caveat pequena">Igual trabalho em grupo, cada um faz uma parte.</p>
+</div>
+<figure>
+<canvas class="sim sim-servidores" width="792" height="446" aria-label="Simulação dividida entre três servidores"></canvas>
+<figcaption><span class="ponto"></span> Cada cor é um servidor. A onda nasce no Servidor 1 e atravessa para os outros pelas bordas.</figcaption>
+</figure>
+</div>
+
+Note:
+(1 minuto) Esse é o segredo pra deixar tudo rápido. Em vez de um computador fazer tudo sozinho, a gente corta o espaço em pedaços e cada servidor cuida de um. Na animação dá pra ver a onda nascendo no pedaço do Servidor 1 e passando pros outros. Pra isso funcionar, as máquinas precisam conversar nas bordas, contando umas pras outras como a onda está ali, e essa conversa usa uma tecnologia chamada MPI. Os arquivos da simulação ficam numa pasta compartilhada entre todos, o NFS, e quem organiza a fila de trabalhos é o Slurm. Sugestão de dinâmica rápida, chamar três voluntários e pedir que cada um some uma fileira de números ao mesmo tempo, mostrando que em grupo termina antes.
+
+---
+
+<!-- .slide: class="claro" data-background-color="#F1F5EE" -->
+
+<p class="eyebrow">Ciência de verdade</p>
+
+## Nem tudo deu certo de primeira
+
+<div class="grade g3">
+<div class="cartao"><p class="status ok">✓ Deu certo</p><p>O ElectrosFI rodou 2D e 3D certinho em um computador só.</p></div>
+<div class="cartao"><p class="status ok">✓ Deu certo</p><p>O cluster passou nos testes sozinho, com MPI, NFS e Slurm.</p></div>
+<div class="cartao inverso"><p class="status alerta">! Travou</p><p>Juntando os dois, as caixinhas do Docker não conseguiam conversar entre servidores diferentes.</p></div>
+</div>
+
+<div class="cartao solucao">
+<p><b>A solução em andamento</b> é trocar para o Apptainer, uma caixinha feita para supercomputadores, que conversa direto com a rede dos servidores e com o Slurm.</p>
+</div>
+
+Note:
+(1 minuto) Essa parte eu gosto de contar porque mostra como a pesquisa funciona de verdade. Primeiro testamos o ElectrosFI num computador só e funcionou em 2D e em 3D. Depois testamos o cluster sozinho, a rede, o compartilhamento de arquivos e o Slurm, e também funcionou. Mas quando juntamos os dois, deu problema. Aquelas caixinhas do Docker são isoladas demais, cada uma só enxerga a rede do próprio computador, então as partes da simulação em servidores diferentes não conseguiam trocar mensagens pelo MPI, e ainda por cima o Docker deixa essa conversa mais lenta. Descobrir isso também é resultado, e virou trabalho apresentado em congresso. A saída que estamos seguindo é o Apptainer, um tipo de contêiner pensado pra supercomputadores. Mensagem pra turma, errar e entender o porquê faz parte da ciência.
+
+---
+
+<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
+
+<p class="eyebrow">Demonstração</p>
+
+## Agora é ao vivo!
+
+<div class="demo">
+<div class="demo-passos">
+<p class="destaque-menta">Prestem atenção em quatro coisas</p>
+<div class="item"><span class="passo">1</span><p>Na área de desenho, criamos um guia de onda reto</p></div>
+<div class="item"><span class="passo">2</span><p>Escolhemos o material e colocamos a fonte da onda</p></div>
+<div class="item"><span class="passo">3</span><p>Mandamos simular e vemos a onda presa no guia</p></div>
+<div class="item"><span class="passo">4</span><p>Abrimos o 3D, que ganha o eixo Z</p></div>
+</div>
+<div class="demo-janela">
+<p class="icone grande-icone">▶</p>
+<p>Trocar para a janela do ElectrosFI</p>
+<p class="nota">Se a rede cair, rodar o vídeo gravado</p>
+</div>
+</div>
+
+Note:
+(2 minutos e meio) Antes de trocar de janela, leio as quatro coisas que eles devem observar, assim a turma sabe o que procurar. Entro com o login e abro o modo 2D. Mostro as partes da tela, as ferramentas, a lista de objetos, a área de desenho, o painel de propriedades e os materiais. Desenho o guia de onda reto, escolho o material, coloco a fonte e mando simular. Quando aparecer o resultado, comparo com a animação do slide da malha, a onda presa dentro do guia. Se der tempo, mostro a fonte com e sem a camada PML, porque sem ela a onda bate na borda e volta, bagunçando tudo. Depois abro o 3D, mostro que a tela é igual mas agora tem o eixo Z, e rodo pra mostrar o resultado com o método dos elementos finitos. Plano B, deixar no computador um vídeo curto gravado das simulações, caso a internet ou o servidor não respondam na hora.
+
+---
+
+<!-- .slide: class="claro" data-background-color="#F1F5EE" -->
+
+<p class="eyebrow">O que vem por aí</p>
+
+## Próximos passos
+
+<div class="grade g2 proximos">
+<div class="cartao"><p class="passo">1</p><h3>Rodar no cluster de verdade</h3><p>Adaptar a parte que faz as contas para usar o Apptainer e o Slurm, aproveitando os servidores que já foram testados.</p></div>
+<div class="cartao realce"><p class="passo">2</p><h3>Otimizar os métodos numéricos</h3><p>O <b>Thomas</b> está integrando o <b>CUCO</b> para otimizar os métodos numéricos do ElectrosFI.</p></div>
+<div class="cartao"><p class="passo">3</p><h3>Código aberto</h3><p>Publicar o repositório no GitHub para outras pessoas usarem, conferirem e ajudarem, seguindo a Ciência Aberta.</p></div>
+<div class="cartao"><p class="passo">4</p><h3>Aberto para a comunidade</h3><p>Disponibilizar o simulador para estudantes e pesquisadores usarem direto do navegador.</p></div>
+</div>
+
+Note:
+(1 minuto) Pra fechar a parte técnica, conto o que vem agora. O primeiro passo é adaptar a parte do ElectrosFI que faz as contas pra rodar no cluster usando o Apptainer e o Slurm, e também estamos avaliando ambientes Conda. Em paralelo, o Thomas está integrando o CUCO pra otimizar os métodos numéricos do simulador — ele vai explicar melhor no próximo slide. Também queremos publicar o código no GitHub, porque toda a documentação já foi pensada pra que outras pessoas consigam continuar o projeto, e no fim deixar o simulador disponível pra estudantes e pesquisadores usarem direto pelo navegador.
+
+---
+
+<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
+
+<p class="eyebrow">Com a palavra, Thomas</p>
+
+## CUCO: o que é e como se aplica?
+
+<div class="grade g2">
+<div class="cartao realce"><h3>O que é o CUCO?</h3><p>Thomas apresenta a ideia e o papel do CUCO.</p></div>
+<div class="cartao"><h3>Como entra no ElectrosFI?</h3><p>Integração aos métodos numéricos do simulador para otimizar os cálculos.</p></div>
+</div>
+
+Note:
+(1 minuto) Passo a palavra ao Thomas para explicar, com suas próprias palavras, o que é o CUCO e que papel ele cumpre. Em seguida, ele mostra em que etapa dos métodos numéricos do ElectrosFI a integração acontece e como ela busca otimizar os cálculos. Se a integração ainda estiver em desenvolvimento, deixe claro que se trata de um trabalho em andamento.
+
+---
+
+<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
+
+<p class="eyebrow">Quem faz</p>
+
+## Pesquisa feita aqui no IFSP
+
+<div class="grade g3">
+<div class="cartao"><h3>Mariana (Pimeys)</h3><p>Estudante de TSI, bolsista de Iniciação Tecnológica do CNPq</p></div>
+<div class="cartao"><h3>Helber Henrique</h3><p>Estudante de TSI</p></div>
+<div class="cartao"><h3>Prof. Dr. Carlos Henrique</h3><p>Orientador do projeto</p></div>
+</div>
+
+<div class="linha-apoio"><span class="pill claro-pill">Apoio CNPq · FAPESP · SETEC/MEC</span><p>Apresentado no Congresso de Iniciação Científica do IFSP, no Congresso de Iniciação Científica da Unicamp e no CONICT</p></div>
+
+<p class="caveat">E vocês também podem fazer pesquisa aqui!</p>
+
+Note:
+(45 segundos) Apresento rapidinho quem faz o projeto. Eu, o Helber, que também estuda Sistemas para Internet, e o professor Carlos, que orienta a pesquisa. Minha bolsa é de Iniciação Tecnológica do CNPq e os servidores do cluster vieram de um financiamento da SETEC do MEC. O ElectrosFI já foi apresentado no congresso de iniciação científica aqui do campus, na Unicamp e no CONICT. A mensagem mais importante é que eu comecei como estudante igual a eles, e no IFSP dá pra entrar em projetos de pesquisa com bolsa. Vale falar pra procurarem os professores se tiverem interesse.
+
+---
+
+<!-- .slide: class="escuro capa" data-background-color="#0B2B22" -->
+
+<div class="fundo-ondas"><canvas class="ondas-fundo" width="1920" height="1080" aria-hidden="true"></canvas></div>
+
+<h1 class="titulo-capa">Obrigada!</h1>
+
+<p class="subtitulo menta forte">Perguntas?</p>
+
+<p class="contato">alice.mariana@aluno.ifsp.edu.br</p>
+
+<p class="rodape">ElectrosFI · IFSP Câmpus Itapetininga</p>
+
+Note:
+(45 segundos) Agradeço e abro pra perguntas. Se ninguém perguntar, puxo uma pergunta minha, por exemplo, onde mais vocês acham que daria pra usar uma simulação dessas, e cito exemplos como antenas de celular, fibras ópticas e sensores.
+
+</textarea>
+</section>
+    </div>
+  </div>
+
+  <script src="vendor/reveal/reveal.js"></script>
+  <script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+  <script src="vendor/reveal/plugin/notes/notes.js"></script>
+  <script src="assets/ondas.js"></script>
+  <script>
+    // Aberto direto do arquivo (duplo clique), o navegador bloqueia a leitura do slides.md.
+    var precisaServidor = location.protocol === "file:" && document.querySelector('section[data-markdown="slides.md"]');
+    if (precisaServidor) {
+      var aviso = document.createElement("div");
+      aviso.className = "aviso-arquivo";
+      aviso.innerHTML = '<div><h1>Quase lá!</h1>' +
+        '<p>O <code>index.html</code> precisa de um servidor local para ler o <code>slides.md</code>.</p>' +
+        '<p>Para abrir com duplo clique, use o arquivo <code>apresentacao.html</code> (gerado com <code>python3 build.py</code>).</p>' +
+        '<p>Ou rode <code>python3 -m http.server 8000</code> nesta pasta e acesse <code>http://localhost:8000</code>.</p>' +
+        '<p>Veja o README.md para mais detalhes.</p></div>';
+      document.body.appendChild(aviso);
+    } else {
+      Reveal.initialize({
+        width: 1920,
+        height: 1080,
+        margin: 0,
+        center: false,
+        hash: true,
+        slideNumber: "c/t",
+        transition: "fade",
+        backgroundTransition: "fade",
+        pdfSeparateFragments: false,
+        plugins: [RevealMarkdown, RevealNotes]
+      }).then(function () {
+        Ondas.iniciar(Reveal);
+      });
+    }
+  </script>
+</body>
+</html>

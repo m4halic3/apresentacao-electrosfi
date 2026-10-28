@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ElectrosFI · Palestra para o Ensino Médio</title>
+  <link rel="stylesheet" href="vendor/reveal/reset.css">
+  <link rel="stylesheet" href="vendor/reveal/reveal.css">
+  <link rel="stylesheet" href="assets/fontes.css">
+  <link rel="stylesheet" href="assets/tema.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-markdown="slides.md"></section>
+    </div>
+  </div>
+
+  <script src="vendor/reveal/reveal.js"></script>
+  <script src="vendor/reveal/plugin/markdown/markdown.js"></script>
+  <script src="vendor/reveal/plugin/notes/notes.js"></script>
+  <script src="assets/ondas.js"></script>
+  <script>
+    // Aberto direto do arquivo (duplo clique), o navegador bloqueia a leitura do slides.md.
+    var precisaServidor = location.protocol === "file:" && document.querySelector('section[data-markdown="slides.md"]');
+    if (precisaServidor) {
+      var aviso = document.createElement("div");
+      aviso.className = "aviso-arquivo";
+      aviso.innerHTML = '<div><h1>Quase lá!</h1>' +
+        '<p>O <code>index.html</code> precisa de um servidor local para ler o <code>slides.md</code>.</p>' +
+        '<p>Para abrir com duplo clique, use o arquivo <code>apresentacao.html</code> (gerado com <code>python3 build.py</code>).</p>' +
+        '<p>Ou rode <code>python3 -m http.server 8000</code> nesta pasta e acesse <code>http://localhost:8000</code>.</p>' +
+        '<p>Veja o README.md para mais detalhes.</p></div>';
+      document.body.appendChild(aviso);
+    } else {
+      Reveal.initialize({
+        width: 1920,
+        height: 1080,
+        margin: 0,
+        center: false,
+        hash: true,
+        slideNumber: "c/t",
+        transition: "fade",
+        backgroundTransition: "fade",
+        pdfSeparateFragments: false,
+        plugins: [RevealMarkdown, RevealNotes]
+      }).then(function () {
+        Ondas.iniciar(Reveal);
+      });
+    }
+  </script>
+</body>
+</html>
