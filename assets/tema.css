@@ -72,6 +72,7 @@
 .contato { font-size: 32px; color: var(--texto-suave-escuro); }
 .reveal .contato a, .reveal .contato a:visited, .reveal .contato a:hover, .reveal .contato a:focus { color: #fff; }
 .rodape { position: absolute !important; left: 128px; bottom: 64px; font-size: 24px; color: var(--texto-suave-escuro); margin: 0 !important; }
+.reveal .slides section.so-titulo { display: flex !important; align-items: center; justify-content: center; }
 .qr-contatos { position: absolute !important; right: 128px; top: 50%; transform: translateY(-50%); display: flex; gap: 40px; }
 .reveal .qr { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 28px; background: var(--escuro-2); border: 2px solid var(--borda-escura); border-radius: 24px; color: var(--claro); text-decoration: none; }
 .reveal .qr img { display: block; width: 260px; height: 260px; margin: 0 0 12px; border-radius: 12px; background: #fff; }

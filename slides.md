@@ -273,6 +273,15 @@ Note:
 
 ---
 
+<!-- .slide: class="destaque so-titulo" data-background-color="#3DDC97" -->
+
+<h1 class="titulo-capa">Demonstração</h1>
+
+Note:
+Saio da apresentação e abro o ElectrosFI no navegador para mostrar a plataforma funcionando.
+
+---
+
 <!-- .slide: class="escuro capa" data-background-color="#0B2B22" -->
 
 <div class="fundo-ondas"><canvas class="ondas-fundo" width="1920" height="1080" aria-hidden="true"></canvas></div>
