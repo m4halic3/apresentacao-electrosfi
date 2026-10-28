@@ -87,12 +87,6 @@ O conteúdo foi escrito com base nos textos e documentos do projeto, que são o 
 
 As animações dos slides são **ilustrações didáticas** feitas para a palestra. Elas resolvem uma versão simplificada da equação da onda em 2D e não são resultados do ElectrosFI.
 
-## Equipe
-
-Mariana Alice Pires Leite (Pimeys), bolsista de Iniciação Tecnológica do CNPq, com orientação do Prof. Dr. Carlos Henrique da Silva Santos, IFSP Câmpus Itapetininga. Apoio CNPq, FAPESP e SETEC/MEC.
-
-Contato: alice.mariana@aluno.ifsp.edu.br
-
 ## Licenças de terceiros
 
 O reveal.js é distribuído sob licença MIT (`vendor/reveal/LICENSE`). As fontes DM Sans, Space Grotesk e Caveat são distribuídas sob a SIL Open Font License 1.1, obtidas pelo projeto Fontsource.
