@@ -70,6 +70,7 @@
 .subtitulo { font-size: 44px; max-width: 1150px; color: var(--texto-suave-escuro); }
 .subtitulo.forte { font-family: var(--fonte-titulo); font-size: 72px; }
 .contato { font-size: 32px; color: var(--texto-suave-escuro); }
+.reveal .contato a, .reveal .contato a:visited, .reveal .contato a:hover, .reveal .contato a:focus { color: #fff; }
 .rodape { position: absolute !important; left: 128px; bottom: 64px; font-size: 24px; color: var(--texto-suave-escuro); margin: 0 !important; }
 
 /* ---------- Grades e cartões ---------- */
