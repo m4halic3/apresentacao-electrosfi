@@ -1,6 +1,6 @@
 # ElectrosFI · Palestra para o Ensino Médio Integrado
 
-Apresentação de 15 minutos que explica, de forma simples, o que é o **ElectrosFI**, simulador eletromagnético em nuvem desenvolvido no IFSP Câmpus Itapetininga, e prepara a turma para a demonstração ao vivo.
+Apresentação de cerca de 12 minutos que explica, de forma simples, o que é o **ElectrosFI**, simulador eletromagnético em nuvem desenvolvido no IFSP Câmpus Itapetininga, e apresenta o funcionamento do projeto e seus próximos passos.
 
 Os slides são escritos em **Markdown** (`slides.md`) e exibidos com o [reveal.js](https://revealjs.com). Eles incluem animações de onda que rodam dentro dos próprios slides. Tudo funciona **sem internet**, porque o reveal.js e as fontes já vêm dentro da pasta.
 
@@ -54,11 +54,9 @@ Mais detalhes, atalhos e solução de problemas estão em [`docs/como-rodar.md`]
 | 9 | Quatro servidores trabalhando juntos | 0:45 | |
 | 10 | Dividir para conquistar | 1:00 | Onda atravessando três servidores, dinâmica com voluntários |
 | 11 | Nem tudo deu certo de primeira | 1:00 | |
-| 12 | Agora é ao vivo! | 2:30 | Demonstração no ElectrosFI |
-| 13 | Próximos passos | 1:00 | |
-| 14 | CUCO: o que é e como se aplica? | 1:00 | Thomas explica o CUCO e sua integração aos métodos numéricos |
-| 15 | Pesquisa feita aqui no IFSP | 0:45 | |
-| 16 | Obrigada! Perguntas? | 0:45 | Ondas animadas |
+| 12 | Próximos passos | 1:00 | |
+| 13 | A natureza inspira a otimização | 1:00 | Explicação de computação bioinspirada e do CUCO |
+| 14 | Obrigada! Perguntas? | 0:45 | Ondas animadas |
 
 As notas de fala de cada slide estão no próprio `slides.md`, depois da linha `Note:`, e aparecem na janela do apresentador (tecla `S`).
 
@@ -87,7 +85,7 @@ apresentacao-electrosfi/
 
 O conteúdo foi escrito com base nos textos e documentos do projeto, que são o relatório parcial e o relatório final da bolsa, os resumos do Congresso de Iniciação Científica do IFSP Itapetininga, do Congresso de Iniciação Científica da Unicamp e do CONICT, e o artigo submetido ao CSBC. Os números do cluster (4 servidores Dell PowerEdge T550, 64 núcleos Intel Xeon 4314, 256 GB de RAM, dois SSDs de 960 GB por servidor, Debian 12) seguem esses documentos.
 
-As animações dos slides são **ilustrações didáticas** feitas para a palestra. Elas resolvem uma versão simplificada da equação da onda em 2D e não são resultados do ElectrosFI. Os resultados reais aparecem na demonstração ao vivo.
+As animações dos slides são **ilustrações didáticas** feitas para a palestra. Elas resolvem uma versão simplificada da equação da onda em 2D e não são resultados do ElectrosFI.
 
 ## Equipe
 

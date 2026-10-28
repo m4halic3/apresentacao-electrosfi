@@ -8,10 +8,10 @@
 
 <p class="subtitulo">Como o computador consegue “ver” ondas que os nossos olhos não enxergam</p>
 
-<p class="rodape">Mariana Alice Pires Leite (Pimeys) · Tecnologia em Sistemas para Internet</p>
+<p class="rodape">Mariana Alice Pires Leite · Thomas Paim<br>Orientador: Prof. Dr. Carlos Henrique da Silva Santos</p>
 
 Note:
-(30 segundos) Oi gente, eu sou a Mariana, mas todo mundo me chama de Pimeys. Eu estudo Sistemas para Internet aqui no IFSP e faço parte de um projeto de pesquisa chamado ElectrosFI. Nos próximos quinze minutos eu vou mostrar como a gente faz o computador enxergar ondas que são invisíveis pra gente, e no final vocês vão ver ele funcionando de verdade.
+(30 segundos) Oi gente, eu sou a Mariana, mas todo mundo me chama de Pimeys. Eu estudo Sistemas para Internet aqui no IFSP e faço parte de um projeto de pesquisa chamado ElectrosFI. Nesta apresentação vou mostrar como a gente usa o computador para estudar ondas que são invisíveis pra gente.
 
 ---
 
@@ -237,32 +237,6 @@ Note:
 
 ---
 
-<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
-
-<p class="eyebrow">Demonstração</p>
-
-## Agora é ao vivo!
-
-<div class="demo">
-<div class="demo-passos">
-<p class="destaque-menta">Prestem atenção em quatro coisas</p>
-<div class="item"><span class="passo">1</span><p>Na área de desenho, criamos um guia de onda reto</p></div>
-<div class="item"><span class="passo">2</span><p>Escolhemos o material e colocamos a fonte da onda</p></div>
-<div class="item"><span class="passo">3</span><p>Mandamos simular e vemos a onda presa no guia</p></div>
-<div class="item"><span class="passo">4</span><p>Abrimos o 3D, que ganha o eixo Z</p></div>
-</div>
-<div class="demo-janela">
-<p class="icone grande-icone">▶</p>
-<p>Trocar para a janela do ElectrosFI</p>
-<p class="nota">Se a rede cair, rodar o vídeo gravado</p>
-</div>
-</div>
-
-Note:
-(2 minutos e meio) Antes de trocar de janela, leio as quatro coisas que eles devem observar, assim a turma sabe o que procurar. Entro com o login e abro o modo 2D. Mostro as partes da tela, as ferramentas, a lista de objetos, a área de desenho, o painel de propriedades e os materiais. Desenho o guia de onda reto, escolho o material, coloco a fonte e mando simular. Quando aparecer o resultado, comparo com a animação do slide da malha, a onda presa dentro do guia. Se der tempo, mostro a fonte com e sem a camada PML, porque sem ela a onda bate na borda e volta, bagunçando tudo. Depois abro o 3D, mostro que a tela é igual mas agora tem o eixo Z, e rodo pra mostrar o resultado com o método dos elementos finitos. Plano B, deixar no computador um vídeo curto gravado das simulações, caso a internet ou o servidor não respondam na hora.
-
----
-
 <!-- .slide: class="claro" data-background-color="#F1F5EE" -->
 
 <p class="eyebrow">O que vem por aí</p>
@@ -283,38 +257,19 @@ Note:
 
 <!-- .slide: class="escuro" data-background-color="#0B2B22" -->
 
-<p class="eyebrow">Com a palavra, Thomas</p>
+<p class="eyebrow">Computação bioinspirada</p>
 
-## CUCO: o que é e como se aplica?
+## A natureza inspira a otimização
 
 <div class="grade g2">
-<div class="cartao realce"><h3>O que é o CUCO?</h3><p>Thomas apresenta a ideia e o papel do CUCO.</p></div>
-<div class="cartao"><h3>Como entra no ElectrosFI?</h3><p>Integração aos métodos numéricos do simulador para otimizar os cálculos.</p></div>
+<div class="cartao"><h3>O que é bioinspirado?</h3><p>É uma forma de resolver problemas usando ideias observadas na natureza para buscar boas soluções.</p></div>
+<div class="cartao realce"><h3>Como o CUCO se aplica?</h3><p>Inspirado nos cucos, o algoritmo testa soluções como ovos em ninhos e favorece as mais promissoras.</p></div>
 </div>
 
-Note:
-(1 minuto) Passo a palavra ao Thomas para explicar, com suas próprias palavras, o que é o CUCO e que papel ele cumpre. Em seguida, ele mostra em que etapa dos métodos numéricos do ElectrosFI a integração acontece e como ela busca otimizar os cálculos. Se a integração ainda estiver em desenvolvimento, deixe claro que se trata de um trabalho em andamento.
-
----
-
-<!-- .slide: class="escuro" data-background-color="#0B2B22" -->
-
-<p class="eyebrow">Quem faz</p>
-
-## Pesquisa feita aqui no IFSP
-
-<div class="grade g3">
-<div class="cartao"><h3>Mariana (Pimeys)</h3><p>Estudante de TSI, bolsista de Iniciação Tecnológica do CNPq</p></div>
-<div class="cartao"><h3>Helber Henrique</h3><p>Estudante de TSI</p></div>
-<div class="cartao"><h3>Prof. Dr. Carlos Henrique</h3><p>Orientador do projeto</p></div>
-</div>
-
-<div class="linha-apoio"><span class="pill claro-pill">Apoio CNPq · FAPESP · SETEC/MEC</span><p>Apresentado no Congresso de Iniciação Científica do IFSP, no Congresso de Iniciação Científica da Unicamp e no CONICT</p></div>
-
-<p class="caveat">E vocês também podem fazer pesquisa aqui!</p>
+<p class="lead">No ElectrosFI, Thomas está integrando o CUCO para otimizar os métodos numéricos das simulações.</p>
 
 Note:
-(45 segundos) Apresento rapidinho quem faz o projeto. Eu, o Helber, que também estuda Sistemas para Internet, e o professor Carlos, que orienta a pesquisa. Minha bolsa é de Iniciação Tecnológica do CNPq e os servidores do cluster vieram de um financiamento da SETEC do MEC. O ElectrosFI já foi apresentado no congresso de iniciação científica aqui do campus, na Unicamp e no CONICT. A mensagem mais importante é que eu comecei como estudante igual a eles, e no IFSP dá pra entrar em projetos de pesquisa com bolsa. Vale falar pra procurarem os professores se tiverem interesse.
+(1 minuto) Explico que algoritmos bioinspirados usam estratégias da natureza como inspiração para encontrar boas soluções. No CUCO, as soluções candidatas são comparadas com a imagem de ovos em ninhos: as mais promissoras seguem no processo e outras são testadas. Thomas apresenta como essa ideia está sendo integrada aos métodos numéricos do ElectrosFI para otimizá-los. A integração ainda está em desenvolvimento.
 
 ---
 

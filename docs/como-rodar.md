@@ -56,7 +56,7 @@ Qualquer servidor de arquivos estáticos funciona. Por exemplo, a extensão **Li
 
 Passadores de slide (aqueles controles com laser) funcionam normalmente, porque enviam as teclas `Page Down` e `Page Up`.
 
-Para abrir direto num slide específico, acrescente o número no endereço, por exemplo `apresentacao.html#/12` abre a demonstração (a contagem começa em 0 na capa).
+Para abrir direto num slide específico, acrescente o número no endereço. Por exemplo, `apresentacao.html#/11` abre o slide dos próximos passos (a contagem começa em 0 na capa).
 
 ### Sobre as animações
 
@@ -65,8 +65,6 @@ As ondas da capa e do encerramento e as três simulações (guia de onda, malha 
 ## Checklist para o dia
 
 - Testar o `apresentacao.html` **no computador que vai ser usado**, ligado no projetor.
-- Deixar aberta, numa aba separada, a janela do ElectrosFI já logada para a demonstração.
-- Ter um **vídeo gravado** da demonstração (2D e 3D) como plano B, caso a rede ou o servidor não respondam.
 - Levar a pasta inteira num pendrive. O `apresentacao.html` precisa das pastas `assets` e `vendor` ao lado dele.
 - Conferir o tempo com o cronômetro da janela do apresentador num ensaio.
 

@@ -131,25 +131,9 @@ figcaption { margin-top: 24px; font-size: 24px; line-height: 1.4; color: var(--t
 .cartao.solucao { border: 3px solid var(--acento-claro); flex-direction: row; align-items: center; }
 .cartao.solucao p { font-size: 32px; color: var(--texto-escuro) !important; }
 
-/* ---------- Demonstração ---------- */
-.demo { display: grid; grid-template-columns: 760px 1fr; gap: 64px; margin-top: 16px; }
-.destaque-menta { font-size: 32px; font-weight: 700; color: var(--menta); }
-.demo .item { display: flex; gap: 24px; align-items: baseline; margin-bottom: 20px; }
-.demo .item .passo { color: var(--lima) !important; }
-.demo .item p { margin: 0; font-size: 32px; }
-.demo-janela { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; min-height: 520px; border: 3px dashed var(--menta); border-radius: 24px; background: var(--escuro-2); text-align: center; padding: 48px; }
-.demo-janela p { margin: 0; font-size: 32px; }
-.demo-janela .nota { color: var(--texto-suave-escuro); }
-.grande-icone { font-size: 96px !important; color: var(--menta); line-height: 1; }
-
 /* ---------- Próximos passos ---------- */
 .proximos .cartao { padding: 32px 36px; gap: 12px; }
 .proximos h3 { font-size: 36px; }
-
-/* ---------- Quem faz ---------- */
-.linha-apoio { display: flex; gap: 32px; align-items: center; }
-.linha-apoio .pill { white-space: nowrap; color: var(--escuro); }
-.linha-apoio p { margin: 0; font-size: 24px; color: var(--texto-suave-escuro); }
 
 /* ---------- Fragmentos (cliques) ---------- */
 .reveal .fragment { transition: all 0.35s ease; }
