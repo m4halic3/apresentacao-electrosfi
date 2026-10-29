@@ -260,14 +260,12 @@ Note:
 ## Próximos passos
 
 <div class="grade g2 proximos">
-<div class="cartao"><p class="passo">1</p><h3>Rodar no cluster de verdade</h3><p>Adaptar a parte que faz as contas para usar o Apptainer e o Slurm, aproveitando os servidores que já foram testados.</p></div>
-<div class="cartao realce"><p class="passo">2</p><h3>Otimizar os métodos numéricos</h3><p>O <b>Thomas</b> está integrando o <b>CUCO</b> para otimizar os métodos numéricos do ElectrosFI.</p></div>
-<div class="cartao"><p class="passo">3</p><h3>Código aberto</h3><p>Publicar o repositório no GitHub para outras pessoas usarem, conferirem e ajudarem, seguindo a Ciência Aberta.</p></div>
-<div class="cartao"><p class="passo">4</p><h3>Aberto para a comunidade</h3><p>Disponibilizar o simulador para estudantes e pesquisadores usarem direto do navegador.</p></div>
+<div class="cartao"><p class="passo">1</p><h3>Validar e testar no cluster</h3><p>Executar testes do ElectrosFI no cluster e validar os resultados das simulações.</p></div>
+<div class="cartao realce"><p class="passo">2</p><h3>Integrar o Cuckoo Search</h3><p>Concluir a integração do algoritmo para otimizar os métodos numéricos do ElectrosFI.</p></div>
 </div>
 
 Note:
-(1 minuto) Pra fechar a parte técnica, conto o que vem agora. O primeiro passo é adaptar a parte do ElectrosFI que faz as contas pra rodar no cluster usando o Apptainer e o Slurm, e também estamos avaliando ambientes Conda. Em paralelo, o Thomas está integrando o CUCO pra otimizar os métodos numéricos do simulador — ele vai explicar melhor no próximo slide. Também queremos publicar o código no GitHub, porque toda a documentação já foi pensada pra que outras pessoas consigam continuar o projeto, e no fim deixar o simulador disponível pra estudantes e pesquisadores usarem direto pelo navegador.
+(1 minuto) Pra fechar a parte técnica, conto os próximos passos: validar os resultados e testar o ElectrosFI no cluster. Em paralelo, o Thomas está concluindo a integração do Cuckoo Search para otimizar os métodos numéricos do simulador — ele vai explicar melhor no próximo slide. A integração ainda está em desenvolvimento.
 
 ---
 
@@ -279,13 +277,13 @@ Note:
 
 <div class="grade g2">
 <div class="cartao"><h3>O que é bioinspirado?</h3><p>É uma forma de resolver problemas usando ideias observadas na natureza para buscar boas soluções.</p></div>
-<div class="cartao realce"><h3>Como o CUCO se aplica?</h3><p>Inspirado nos cucos, o algoritmo testa soluções como ovos em ninhos e favorece as mais promissoras.</p></div>
+<div class="cartao realce"><h3>Como funciona o Cuckoo Search?</h3><p>Inspirado em estratégias de nidificação observadas na natureza, o algoritmo testa soluções como ovos em ninhos e favorece as mais promissoras.</p></div>
 </div>
 
-<p class="lead">No ElectrosFI, Thomas está integrando o CUCO para otimizar os métodos numéricos das simulações.</p>
+<p class="lead">No ElectrosFI, Thomas está integrando o Cuckoo Search para otimizar os métodos numéricos das simulações.</p>
 
 Note:
-(1 minuto) Explico que algoritmos bioinspirados usam estratégias da natureza como inspiração para encontrar boas soluções. No CUCO, as soluções candidatas são comparadas com a imagem de ovos em ninhos: as mais promissoras seguem no processo e outras são testadas. Thomas apresenta como essa ideia está sendo integrada aos métodos numéricos do ElectrosFI para otimizá-los. A integração ainda está em desenvolvimento.
+(1 minuto) Explico que algoritmos bioinspirados usam estratégias da natureza como inspiração para encontrar boas soluções. No Cuckoo Search, as soluções candidatas são comparadas com a imagem de ovos em ninhos: as mais promissoras seguem no processo e outras são testadas. Thomas apresenta como essa ideia está sendo integrada aos métodos numéricos do ElectrosFI para otimizá-los. A integração ainda está em desenvolvimento.
 
 ---
 

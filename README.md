@@ -55,7 +55,7 @@ Mais detalhes, atalhos e solução de problemas estão em [`docs/como-rodar.md`]
 | 10 | Dividir para conquistar | 1:00 | Onda atravessando três servidores, dinâmica com voluntários |
 | 11 | Nem tudo deu certo de primeira | 1:00 | |
 | 12 | Próximos passos | 1:00 | |
-| 13 | A natureza inspira a otimização | 1:00 | Explicação de computação bioinspirada e do CUCO |
+| 13 | A natureza inspira a otimização | 1:00 | Explicação de computação bioinspirada e do Cuckoo Search |
 | 14 | Obrigada! Perguntas? | 0:45 | Ondas animadas |
 
 As notas de fala de cada slide estão no próprio `slides.md`, depois da linha `Note:`, e aparecem na janela do apresentador (tecla `S`).
